@@ -1,8 +1,9 @@
-function App() {
+import Documents from "./components/Documents"
 
+function App() {
   return (
     <div className="App">
-      App
+      <Documents />
     </div>
   )
 }
