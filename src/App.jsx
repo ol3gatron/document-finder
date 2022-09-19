@@ -1,9 +1,13 @@
+import Header from "./components/Header"
 import Documents from "./components/Documents"
 
 function App() {
   return (
     <div className="App">
-      <Documents />
+      <Header />
+      <main>
+        <Documents />
+      </main>
     </div>
   )
 }

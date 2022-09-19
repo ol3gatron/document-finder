@@ -7,6 +7,16 @@
   font-family: 'Roboto', sans-serif;
 }
 
+header {
+  color: #ffffff;
+  background-color: #444444;
+  padding: 15px;
+}
+
+main {
+  display: flex;
+}
+
 .document-item {
   color: #000000;
   background-color: #D2E8BA;
