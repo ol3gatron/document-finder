@@ -23,6 +23,13 @@ main {
   margin-right: 50px;
 }
 
+input {
+  height: 30px;
+  border: 1px solid #cdcdcd;
+  border-radius: 3px;
+  padding: 5px;
+}
+
 .input {
   margin: 15px 0;
 }
@@ -32,12 +39,12 @@ main {
   justify-content: space-between;
 }
 
-.input--title {
+.input-title {
   font-weight: 700;
   margin: 10px 0;
 }
 
-.input--subtitle {
+.input-subtitle {
   font-size: 11px;
 }
 

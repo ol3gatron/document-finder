@@ -7,13 +7,15 @@ const Document = ({document}) => {
     setIsHiden(prevState => !prevState)
   }
 
+  const date = document.timeStamp.split("-")
+
   return (
     <div className="document-item">
       <div className="document-header" onClick={handleClick}>{document.header}</div>
       {!isHiden &&
         <div className="document-body">
         <p className="document-id">ID: {document.id}</p>
-        <p className="document-date">Создан: {document.date}</p>
+        <p className="document-date">Создан: {`${date[2]}.${date[1]}.${date[0]}`}</p>
       </div>
       }
     </div>
