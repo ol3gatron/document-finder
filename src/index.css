@@ -15,6 +15,47 @@ header {
 
 main {
   display: flex;
+  padding: 25px;
+}
+
+.search-bar {
+  flex: 3;
+  margin-right: 50px;
+}
+
+.input {
+  margin: 15px 0;
+}
+
+.input-fields {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input--title {
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.input--subtitle {
+  font-size: 11px;
+}
+
+.input-fullsize {
+  width: 100%;
+}
+
+.input-halfsize {
+  width: 45%;
+}
+
+.documents {
+  flex: 7;
+}
+
+.document {
+  margin: 20px 0;
+  border: 1px solid #d2e8b8;
 }
 
 .document-item {
