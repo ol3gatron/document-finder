@@ -76,6 +76,9 @@ input {
 
 .document-header {
   padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .document-body {

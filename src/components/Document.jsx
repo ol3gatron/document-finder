@@ -11,7 +11,18 @@ const Document = ({document}) => {
 
   return (
     <div className="document-item">
-      <div className="document-header" onClick={handleClick}>{document.header}</div>
+      <div className="document-header" onClick={handleClick}>
+        {document.header}
+        {isHiden ?
+          <span class="material-icons">
+            expand_more
+          </span> :
+          <span class="material-icons">
+            expand_less
+          </span>
+        }
+
+      </div>
       {!isHiden &&
         <div className="document-body">
         <p className="document-id">ID: {document.id}</p>
