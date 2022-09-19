@@ -57,6 +57,8 @@ input {
 }
 
 .documents {
+  display: flex;
+  flex-direction: column;
   flex: 7;
 }
 
@@ -79,4 +81,29 @@ input {
 .document-body {
   background-color: #fff;
   padding: 15px;
+}
+
+nav {
+  align-self: center;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.pagination > li {
+  border: 2px solid #D2E8BA;
+  margin: 5px;
+  border-radius: 50%;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  text-align: center;
 }
