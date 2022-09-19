@@ -5,7 +5,6 @@ const DocumentsContext = createContext()
 function DocumentsContextProvider({children}) {
   const [documents, setDocuments] = useState([])
 
-
   useEffect(() => {
     const getDate = async () => {
       const res = await fetch('http://localhost:5000/documents');
@@ -15,8 +14,28 @@ function DocumentsContextProvider({children}) {
     getDate()
   }, [])
 
+  const [searchParams, setSearchParams] = useState({
+    id: "",
+    dateFrom: "",
+    dateTo: "",
+    header: "",
+    sort: "date",
+    sortBy: "newest"
+  })
+
+  const handleChange = (e) => {
+    setSearchParams(prevSearchParams => {
+        return {
+            ...prevSearchParams,
+            [e.target.name]: e.target.value
+        }
+    })
+  }
+
+  console.log(searchParams)
+
   return (
-    <DocumentsContext.Provider value={{documents}}>
+    <DocumentsContext.Provider value={{documents, searchParams, handleChange}}>
       {children}
     </DocumentsContext.Provider>
   )
