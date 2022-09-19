@@ -4,6 +4,8 @@ const DocumentsContext = createContext()
 
 function DocumentsContextProvider({children}) {
   const [documents, setDocuments] = useState([])
+  const [currentPage, setCurrentPage] = useState(1)
+  const [docsPerPage, setDocsPerPage] = useState(10)
   const [searchParams, setSearchParams] = useState({
     id: "",
     dateFrom: "",
@@ -45,8 +47,12 @@ function DocumentsContextProvider({children}) {
     })
   }
 
+  const indexOfLastDoc = currentPage * docsPerPage
+  const indexOfFirstDoc = indexOfLastDoc - docsPerPage
+  const currentDocs = documents.slice(indexOfFirstDoc, indexOfLastDoc)
+
   return (
-    <DocumentsContext.Provider value={{documents, searchParams, handleChange}}>
+    <DocumentsContext.Provider value={{documents, searchParams, currentDocs, docsPerPage, handleChange, setCurrentPage}}>
       {children}
     </DocumentsContext.Provider>
   )

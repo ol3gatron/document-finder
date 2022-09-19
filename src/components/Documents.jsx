@@ -1,11 +1,12 @@
 import { useContext } from "react"
 import { DocumentsContext } from "../context/DocumentContext"
 import Document from "./Document"
+import Pagination from "./Pagination"
 
 const Documents = () => {
-  const {documents, searchParams} = useContext(DocumentsContext)
+  const {documents, currentDocs, searchParams, docsPerPage, setCurrentPage} = useContext(DocumentsContext)
 
-  const documentsSorted = documents.sort((a, b) => {
+  const documentsSorted = currentDocs.sort((a, b) => {
     if (searchParams.sort === "date" && searchParams.sortBy === "newest") {
       return new Date(b.date) - new Date(a.date)
     } else if (searchParams.sort === "date" && searchParams.sortBy === "oldest") {
@@ -13,9 +14,12 @@ const Documents = () => {
     }
   })
 
+  const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
   return (
     <div className="documents">
-      {documents.map(document => (
+      <Pagination docsPerPage={docsPerPage} totalDocs={documents.length} paginate={paginate}/>
+      {currentDocs.map(document => (
         <Document document={document} key={document.id}/>
       ))}
     </div>
